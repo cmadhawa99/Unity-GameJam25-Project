@@ -243,9 +243,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetAngle: 0
-  strength: 100
-  damping: 50
-  maxTorque: 10000
+  strength: 20
+  damping: 5
+  maxTorque: 3000
 --- !u!1 &97918947 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8041323334939135599, guid: 88cf8796c3c18f54c96dee9828ba16ac, type: 3}
@@ -382,9 +382,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetAngle: 0
-  strength: 100
-  damping: 50
-  maxTorque: 10000
+  strength: 20
+  damping: 5
+  maxTorque: 3000
 --- !u!1001 &160736293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1250,9 +1250,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetAngle: 0
-  strength: 100
-  damping: 50
-  maxTorque: 10000
+  strength: 20
+  damping: 5
+  maxTorque: 3000
 --- !u!1 &1005228517 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2749243257623881179, guid: 88cf8796c3c18f54c96dee9828ba16ac, type: 3}
@@ -1384,9 +1384,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetAngle: 0
-  strength: 100
-  damping: 50
-  maxTorque: 10000
+  strength: 20
+  damping: 5
+  maxTorque: 3000
 --- !u!1 &1046328150 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6290923089992950464, guid: 88cf8796c3c18f54c96dee9828ba16ac, type: 3}
@@ -1515,9 +1515,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetAngle: 0
-  strength: 100
-  damping: 50
-  maxTorque: 10000
+  strength: 20
+  damping: 5
+  maxTorque: 3000
 --- !u!1 &1099214808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,7 +1529,7 @@ GameObject:
   - component: {fileID: 1099214811}
   - component: {fileID: 1099214810}
   - component: {fileID: 1099214809}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1904,9 +1904,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetAngle: 0
-  strength: 100
-  damping: 50
-  maxTorque: 10000
+  strength: 20
+  damping: 5
+  maxTorque: 3000
 --- !u!1 &1388412247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2205,9 +2205,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetAngle: 0
-  strength: 100
-  damping: 50
-  maxTorque: 10000
+  strength: 20
+  damping: 5
+  maxTorque: 3000
 --- !u!1 &1883171404 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4264205489951344557, guid: 88cf8796c3c18f54c96dee9828ba16ac, type: 3}
@@ -2347,9 +2347,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetAngle: 0
-  strength: 100
-  damping: 50
-  maxTorque: 10000
+  strength: 20
+  damping: 5
+  maxTorque: 3000
 --- !u!1 &2014888883 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2805404538631728759, guid: 88cf8796c3c18f54c96dee9828ba16ac, type: 3}
