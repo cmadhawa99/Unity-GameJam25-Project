@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic; // --- NEW --- (Needed for List<T>)
 using TMPro; // For TextMeshPro
 
 public class QuoteManager : MonoBehaviour {
@@ -25,6 +26,10 @@ public class QuoteManager : MonoBehaviour {
     [SerializeField]
     private float quoteDisplayDuration = 5f; // How long to show the quote
 
+    // --- NEW ---
+    // This list will act as our "shuffle bag" of quotes to draw from.
+    private List<string> availableQuotes;
+
     void Start() {
         if (quoteText == null) {
             Debug.LogError("QuoteText is not assigned in the Inspector!");
@@ -34,10 +39,26 @@ public class QuoteManager : MonoBehaviour {
         // Set initial text color to fully transparent
         quoteText.color = new Color(quoteText.color.r, quoteText.color.g, quoteText.color.b, 0);
 
+        // --- NEW ---
+        // Initialize the list
+        availableQuotes = new List<string>();
+
         // Start the quote loop
         StartCoroutine(QuoteLoop());
     }
 
+    // --- NEW ---
+    /// <summary>
+    /// Refills the availableQuotes list from the main quotes array.
+    /// This is called when the available list is empty.
+    /// </summary>
+    private void RefillQuoteList() {
+        Debug.Log("Refilling quote list...");
+        availableQuotes.Clear();
+        availableQuotes.AddRange(quotes);
+    }
+
+    // --- MODIFIED ---
     // This coroutine runs forever, deciding WHEN to show the next quote
     private IEnumerator QuoteLoop() {
         // Wait for a few seconds at the start before the first quote
@@ -51,8 +72,21 @@ public class QuoteManager : MonoBehaviour {
                 continue; // Skip the rest of the loop
             }
 
-            // Pick a random quote
-            string randomQuote = quotes[Random.Range(0, quotes.Length)];
+            // --- MODIFIED QUOTE SELECTION LOGIC ---
+
+            // 1. Check if our "bag" is empty. If so, refill it.
+            if (availableQuotes.Count == 0) {
+                RefillQuoteList();
+            }
+
+            // 2. Pick a random quote from the *available* list
+            int randomIndex = Random.Range(0, availableQuotes.Count);
+            string randomQuote = availableQuotes[randomIndex];
+
+            // 3. Remove the quote from the available list so it won't be picked again
+            availableQuotes.RemoveAt(randomIndex);
+
+            // --- END OF MODIFIED LOGIC ---
 
             // Call the coroutine to show the quote AND wait for it to finish
             yield return StartCoroutine(ShowQuote(randomQuote));
@@ -64,6 +98,7 @@ public class QuoteManager : MonoBehaviour {
     }
 
     // This coroutine handles the fade-in, display, and fade-out
+    // --- (This function is UNCHANGED) ---
     private IEnumerator ShowQuote(string quote) {
         quoteText.text = quote;
         float timer = 0f;
